@@ -15,21 +15,20 @@
 import java.io.*;
 
 public class main {
-    public static final String ADMIN_LOGIN="UserName";
-    public static final String ADMIN_PASSWORD="Password1234";
 
     public static void main(String args[]) {
 
         try {
             File file = new File("/tmp/myfile.txt");
 
+            // REVIEW: The following lines create temporary files. Ensure this is handled according to your security requirements, especially in a production environment.
             java.io.File.createTempFile("prefix", "suffix"); // Sensitive, will be in the default temporary-file directory.
             java.nio.file.Files.createTempDirectory("prefix"); // Sensitive, will be in the default temporary-file directory.
         }catch (Exception ex) {
 
         }
 
-        System.out.println(ADMIN_LOGIN+":"+ADMIN_PASSWORD);
+        System.out.println("WARNING: Admin credentials are not configured. Please set them externally.");
         for (int i=0; i<10000; i++) {
             System.out.print("Hello world");
             System.out.println(i);

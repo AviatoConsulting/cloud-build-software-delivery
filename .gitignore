@@ -24,3 +24,12 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# Ignore .DS_Store files
+.DS_Store
+
+# Ignore bin directory
+bin/
+
+# Ignore policy directory
+policy/

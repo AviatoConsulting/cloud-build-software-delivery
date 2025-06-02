@@ -101,7 +101,7 @@ steps:
     args:
       - '-c'
       - |
-        docker run --rm -v $(pwd):/project openpolicyagent/conftest test Dockerfile>/workspace/conftest.txt; \    
+        docker run --rm -v $(pwd):/project openpolicyagent/conftest test --policy policies Dockerfile >/workspace/conftest.txt; \
         if [[ $(cat /workspace/conftest.txt | grep 'FAIL'| wc -l) -gt 0 ]] ; then echo 'Conftest failed' && cat /workspace/conftest.txt && exit 1; else echo 'Conftest Passed'; fi
 
   - name: 'gcr.io/cloud-builders/kubectl'
