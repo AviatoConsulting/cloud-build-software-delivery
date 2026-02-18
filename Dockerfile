@@ -29,3 +29,4 @@ COPY --from=build /home/gradle/src/build/libs/*.jar /app/gradle-application.jar
 COPY --from=build /home/gradle/src/manifests/gradle-app.yaml.tpl /app/gradle-app.yaml.tpl
 
 ENTRYPOINT ["java","-jar","/app/gradle-application.jar"]
+
